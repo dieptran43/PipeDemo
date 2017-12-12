@@ -1,0 +1,23 @@
+<p>
+  viewproduct works! {{typeSummary}} -- {{typeCurrency}}
+</p>
+
+<div class="panel panel-default">
+  <div class="panel-heading">    
+    <app-control (typeSummaryChange)="changeSummary($event)"
+    (typeCurrencyChange)="changeCurrency($event)"
+    [typeSummary]="typeSummary"
+    [typeCurrency]="typeCurrency"
+    >    
+    </app-control>
+    <div class="clearfix"></div>
+  </div>
+  <div class="panel-body">
+    <app-course [courses]="courses" [typeSummary]="typeSummary" 
+    [typeCurrency]="typeCurrency"
+    [tyGia]="tyGia"
+    ></app-course>
+  </div>
+</div>
+
+

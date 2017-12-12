@@ -1,0 +1,88 @@
+<p>
+  pipetest works!
+</p>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr class="info">
+      <th width="20%">Name</th>
+      <th width="40%">Input</th>
+      <th width="40%">Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>uppercase</td>
+      <td>{{courseObj.name }}</td>
+      <td>{{courseObj.name | uppercase}}</td>
+    </tr>
+    <tr>
+      <td>lowercase</td>
+      <td>{{courseObj.name }}</td>
+      <td>{{courseObj.name | lowercase}}</td>
+    </tr>
+    <tr>
+      <td>Slice -string</td>
+      <td>{{courseObj.name }}</td>
+      <td>
+        {{courseObj.name | slice: 0: 2}} =>//slice: 0: 2
+        <br/> {{courseObj.name | slice: 2}} =>// slice: 2
+        <br/> {{courseObj.name | slice: -3}} =>//slice: -3
+        <br/> {{courseObj.name | slice: -3: -1}} =>//slice: -3: -1
+        <br/>
+      </td>
+    </tr>
+    <tr>
+      <td>slice -array</td>
+      <td>
+        <ul *ngFor="let item of courseObj.require">
+          <li>{{item}}</li>
+        </ul>
+
+      </td>
+      <td>{{courseObj.require | slice: 0:2}} ==>// slice: 0:2</td>
+    </tr>
+    <tr>
+      <td>decimalpipe</td>
+      <td>{{courseObj.price }}</td>
+      <td>{{courseObj.price | number:'4.0-3'}}</td>
+    </tr>
+    <tr>
+      <td>currentcy pipe</td>
+      <td>{{courseObj.price }}</td>
+      <td>{{courseObj.price | currency}}
+        <br/> {{courseObj.price | currency:'VND'}}
+        <br/> {{courseObj.price | currency:'VND':true}}
+        <br/> {{courseObj.price | currency:'VND':true:'4.0-4'}}
+        <br/> {{courseObj.price | currency:'VND':true:'4.2-2'}}
+        <br/> {{12 | currency:'VND':true:'4.0-2'}}
+        <br/> {{12 | currency:'VND':true:'4.2-2'}}
+        <br/>
+      </td>
+    </tr>
+
+    <tr>
+      <td>datepipe</td>
+      <td>{{courseObj.date }}</td>
+      <td>
+        {{courseObj.date}}<br/>
+        medium - {{courseObj.date |date:'medium'}} <br/>
+        short - {{courseObj.date |date:'short'}}<br/>
+        fullDate - {{courseObj.date | date:'fullDate'}}<br/>
+        longDate - {{courseObj.date | date:'longDate'}}<br/>
+        shortDate - {{courseObj.date | date:'shortDate'}}<br/>
+        mediumTime - {{courseObj.date | date: 'mediumTime'}}<br/>
+        shortTime - {{courseObj.date | date: 'shortTime'}}<br/>
+        customer dd/MM/y {{courseObj.date | date: 'dd/MM/y'}}<br/>
+        customer weekday dd/MM/y {{courseObj.date | date: 'EEEE,dd/MM/y'}}<br/>
+        customer timezone dd/MM/y h:m a {{courseObj.date | date: 'dd/MM/y h:m a'}}<br/>
+        customer timezone dd/MM/y h:m a Z {{courseObj.date | date: 'dd/MM/y h:m a Z'}}<br/>
+      </td>
+    </tr>
+    <tr>
+        <td>json pipe</td>
+        <td>{{courseObj}}</td>
+        <td>{{courseObj | json | uppercase}}</td>
+      </tr>
+  </tbody>
+</table>

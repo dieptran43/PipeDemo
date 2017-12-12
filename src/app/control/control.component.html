@@ -1,0 +1,18 @@
+
+      <form class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <label>Summary Type: </label>
+          <select name="selectSummary" (change)="changeSummary1($event)" class="form-control">
+            <option *ngFor="let i of arrSummary" value="{{i.id}}" [selected]="i.id==typeSummary">{{i.name}}</option>
+            <!-- <option value="1">Medium</option>
+            <option value="2">Lagre</option> -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Currency: </label>
+          <select name="selectCurrency" (change)="changeCurrency($event)" class="form-control">
+            <option *ngFor="let i of arrCurrency" value="{{i.id}}" [selected]="i.id == typeCurrency">{{i.name}}</option>
+          </select>
+        </div>
+      </form>
+      

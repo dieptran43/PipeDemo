@@ -1,0 +1,64 @@
+<p>
+  pipecustom works!
+</p>
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr class="info">
+      <th width="20%">Name</th>
+      <th width="40%">Input</th>
+      <th width="40%">Output</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Capitalize</td>
+      <td>{{text}}</td>
+      <td>{{text | capilalize}}</td>
+    </tr>
+    <tr>
+      <td>Array pipe</td>
+      <td>
+        {{arrNumber}}
+        <ul>
+          <li *ngFor="let item of arrNumber">{{item}}</li>
+        </ul>
+      </td>
+      <td>{{arrNumber | arrpipe: 'odd'}}
+          <ul>
+              <li *ngFor="let item of arrNumber | arrpipe">{{item}}</li>
+            </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Sort Asc
+      </td>
+      <td>
+        <ul>
+          <li *ngFor="let item of courseObj.require">
+            {{item}}
+          </li>
+        </ul>
+      </td>
+      <td>
+          <ul>
+              <li *ngFor="let item2 of courseObj.require | sort:'DESC'">
+                {{item2}}
+              </li>
+            </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>Summary string</td>
+      <td>{{description}}</td>
+      <td>{{description | summary: 60: ">>>"}}</td>
+     
+    </tr>
+    <tr>
+      <td>Category khong trung</td>
+      <td>{{arrCategory}}</td>
+      <td>{{arrCategory |sort | categorypipe}}</td>
+     
+    </tr>
+ </tbody>
+</table>
